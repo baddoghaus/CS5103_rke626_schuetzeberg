@@ -1,9 +1,13 @@
 import sys # lib used for cmd line args
 
 word_dict = {} # declair dictory of words:occurences
+lineCount = 0  # declair a variable to hold the number of lines
 
 #print("The input file has the name %s" % (sys.argv[1])) 
 #print("The output file has the name %s" % (sys.argv[2]))
+
+# count the number of lines in argv[1]
+lineCount = len(open(sys.argv[1]).readlines())
 
 # open argv[1] as input file object -strip of '\n' -split text at spaces
 with open(sys.argv[1], "r") as input_doc:
@@ -23,7 +27,12 @@ for word in word_list:
 for key,value in sorted(word_dict.items()):
     print(key, value)
     output_doc.write('{} {}\n'.format(key, value))
- 
+
+# print number of lines in doc
+print("\nThere are " + str(lineCount) + " lines in the input file.")
+output_doc.write("\nThere are {} lines in the input file.\n".format(lineCount))
+
 # clean up memory
 input_doc.close()
 output_doc.close()
+
