@@ -1,11 +1,9 @@
 import sys # lib used for cmd line args
+import os # lib used to delete files
 
 word_dict = {} # declair dictory of words:occurences
 lineCount = 0  # declair a variable to hold the number of lines
 characterCount = 0 #declair a varialbe to hold the number of characters
-
-#print("The input file has the name %s" % (sys.argv[1])) 
-#print("The output file has the name %s" % (sys.argv[2]))
 
 # count the number of lines in argv[1]
 lineCount = len(open(sys.argv[1]).readlines())
@@ -13,9 +11,18 @@ lineCount = len(open(sys.argv[1]).readlines())
 # count the number of characters in a file
 characterCount = len(open(sys.argv[1]).read())
 
-# open argv[1] as input file object -strip of '\n' -split text at spaces
+# open an intermediate file to store txt after word replacements
+intermediate = open("intermediate.txt", "w+")
+
+# open argv[1] as input file object 
+# replace word patterns from inputFile with argv[3] with argv[4]
+# save replaced text to intermediate file "intermediate.txt"
+# modify intermediate file and store to word_list -strip of '\n' -split text at spaces
 with open(sys.argv[1], "r") as input_doc:
-    word_list = [line.rstrip('\n').split(' ') for line in input_doc]
+    for line in input_doc:
+        intermediate.write(line.replace(sys.argv[3], sys.argv[4]))
+    intermediate.seek(0)
+    word_list = [line.rstrip('\n').split(' ') for line in intermediate]
 
 # flatten nested list
 word_list = [item for sublist in word_list for item in sublist]
@@ -40,7 +47,10 @@ output_doc.write("\nThere are {} lines in the input file.\n".format(lineCount))
 print("\nThere are {} characters in the input file.".format(characterCount))
 output_doc.write("\nThere are {} characters in the input file.\n".format(characterCount))
 
-# clean up memory
+# close input, intermediate, and output file's
 input_doc.close()
 output_doc.close()
+intermediate.close()
 
+# delete intermediate file
+os.remove("intermediate.txt")
