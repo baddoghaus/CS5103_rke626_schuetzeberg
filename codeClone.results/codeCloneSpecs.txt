@@ -1,0 +1,9 @@
+Python~v2_6 CloneDR 1.0
+.95 # similarity threshold expressed as value in range 0.0 to 1.0
+5   # maximum number of parameters for a clone
+6   # number of lines for a clone
+16  # size of character string roughly equal to one node of mass
+1   # starting depth; trades off accuracy (tiny numbers) for speed (modest numbers)
+<C:/Users/eliza/Desktop
+# List of files to process for clones:
+word_stats.py

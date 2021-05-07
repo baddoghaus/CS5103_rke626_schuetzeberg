@@ -1,0 +1,47 @@
+﻿<!-- Copyright (C) 1998-2010 Semantic Designs Inc.; All Rights Reserved; SD Confidential Restricted -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>CloneSet 1</title><link rel="stylesheet" type="text/css" href="yStyleSheet.css"/></head><body id="main"><h1>CloneSet1</h1><p><br/></p><table><tbody><tr><td><a href="index.html">Previous CloneSet</a></td><td><a href="index.html">Next CloneSet</a></td><td><a href="index.html#CloneSetTable">Back to Main Report</a></td></tr></tbody></table><table><thead><tr><th colspan="5"><div style="{text-align:center}"><a id="CloneSetTable"></a></div></th></tr><tr><th>Clone<br/>Mass</th><th>Clones in<br/>CloneSet</th><th>Parameter<br/>Count</th><th>Clone<br/>Similarity</th><th>Syntax Category<br/>[Sequence Length]</th></tr></thead><tbody><tr><td>13</td><td>2</td><td>5</td><td>0.979</td><td>compound_stmt</td></tr></tbody></table><table><tbody><tr><td><a href="#CloneAbstraction">Clone Abstraction</a></td><td><a href="#CloneParameterBindings">Parameter Bindings</a></td></tr></tbody></table><table><thead><tr><th>Clone Instance<br/>(Click to see clone)</th><th>Line Count</th><th>Source Line</th><th><div style="{text-align:center}">Source File</div></th></tr></thead><tbody><tr><td><a href="#CloneInstance1">1</a></td><td>13</td><td>11</td><td><pre>word_stats.py</pre></td></tr><tr><td><a href="#CloneInstance2">2</a></td><td>13</td><td>25</td><td><pre>word_stats.py</pre></td></tr></tbody></table><table><tbody><tr><td><table><tbody><tr><td><a id="CloneInstance1">Clone Instance<br/>1</a></td><td>Line Count<br/>13</td><td>Source Line<br/>11</td><td><div style="{text-align:center}">Source File</div><pre>word_stats.py</pre></td></tr></tbody></table></td></tr><tr><td><br/><pre>
+def line_counter(input_file):
+    'define function "line_counter" to count the number of lines in a file'
+    if type(input_file) not in [str]:
+        print ("The input_file parameter passed to line_counter() is not of type str")
+        raise TypeError
+    try :
+        with open(input_file,"r") as  in_file:
+            length = len(in_file.readlines( ))
+    except FileNotFoundError:
+        print ("The input_file passed to line_counter() does not exist")
+        raise
+    else:
+        return length
+
+</pre><br/></td></tr></tbody></table><table><tbody><tr><td><table><tbody><tr><td><a id="CloneInstance2">Clone Instance<br/>2</a></td><td>Line Count<br/>13</td><td>Source Line<br/>25</td><td><div style="{text-align:center}">Source File</div><pre>word_stats.py</pre></td></tr></tbody></table></td></tr><tr><td><br/><pre>
+def character_counter(input_file):
+    'define function "character_counter" to count the number of character in a file'
+    if type(input_file) not in [str]:
+        print ("The input_file parameter passed to character_counter() is not of type str")
+        raise TypeError
+    try :
+        with open(input_file,"r") as  in_file:
+            length = len(in_file.read( ))
+    except FileNotFoundError:
+        print ("The input_file passed to character_counter() does not exist")
+        raise
+    else:
+        return length
+
+</pre><br/></td></tr></tbody></table><table><tbody><tr><td><table><tbody><tr><td><a id="CloneAbstraction">Clone Abstraction</a></td><td>Parameter Count: 5</td><td><a href="#CloneParameterBindings">Parameter Bindings</a></td></tr></tbody></table></td></tr><tr><td><br/><pre>
+def [[#variable795b340]](input_file):
+   [[#variable79e2c80]]
+  if type(input_file) not in [str]:
+    print ( [[#variable79de100]])
+    raise TypeError
+  try :
+    with open(input_file,"r") as in_file:
+      length = len(in_file. [[#variable795b0a0]]( ))
+  except FileNotFoundError:
+    print ( [[#variable79c9be0]])
+    raise
+  else:
+    return length
+ </pre><br/></td></tr></tbody></table><table><tbody><tr><td><a href="#CloneAbstraction">CloneAbstraction</a></td></tr></tbody></table><table><thead><tr><th colspan="4"><div style="{text-align:center}"><a id="CloneParameterBindings">Parameter Bindings</a></div></th></tr><tr><th>Parameter<br/>Index</th><th>Clone<br/>Instance</th><th>Parameter<br/>Name<br/></th><th>Value<br/></th></tr></thead><tbody><tr><td>1</td><td>1</td><td><tt>[[#795b340]]</tt></td><td><pre>character_counter </pre></td></tr><tr><td>1</td><td>2</td><td><tt>[[#795b340]]</tt></td><td><pre>line_counter </pre></td></tr><tr><td>2</td><td>1</td><td><tt>[[#79e2c80]]</tt></td><td><pre>'define function "character_counter" to count the number of character in a file' </pre></td></tr><tr><td>2</td><td>2</td><td><tt>[[#79e2c80]]</tt></td><td><pre>'define function "line_counter" to count the number of lines in a file' </pre></td></tr><tr><td>3</td><td>1</td><td><tt>[[#79de100]]</tt></td><td><pre>"The input_file parameter passed to character_counter() is not of type str" </pre></td></tr><tr><td>3</td><td>2</td><td><tt>[[#79de100]]</tt></td><td><pre>"The input_file parameter passed to line_counter() is not of type str" </pre></td></tr><tr><td>4</td><td>1</td><td><tt>[[#795b0a0]]</tt></td><td><pre>read </pre></td></tr><tr><td>4</td><td>2</td><td><tt>[[#795b0a0]]</tt></td><td><pre>readlines </pre></td></tr><tr><td>5</td><td>1</td><td><tt>[[#79c9be0]]</tt></td><td><pre>"The input_file passed to character_counter() does not exist" </pre></td></tr><tr><td>5</td><td>2</td><td><tt>[[#79c9be0]]</tt></td><td><pre>"The input_file passed to line_counter() does not exist" </pre></td></tr></tbody></table></body></html>

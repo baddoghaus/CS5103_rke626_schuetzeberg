@@ -1,0 +1,16 @@
+************* Module word_stats
+word_stats.py:9:0: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+word_stats.py:11:17: W0621: Redefining name 'input_file' from outer scope (line 8) (redefined-outer-name)
+word_stats.py:25:22: W0621: Redefining name 'input_file' from outer scope (line 8) (redefined-outer-name)
+word_stats.py:39:17: W0621: Redefining name 'input_file' from outer scope (line 8) (redefined-outer-name)
+word_stats.py:61:18: W0621: Redefining name 'input_file' from outer scope (line 8) (redefined-outer-name)
+word_stats.py:90:15: W0621: Redefining name 'word_dict' from outer scope (line 7) (redefined-outer-name)
+word_stats.py:95:15: W0621: Redefining name 'word_dict' from outer scope (line 7) (redefined-outer-name)
+word_stats.py:95:26: W0621: Redefining name 'out_file' from outer scope (line 9) (redefined-outer-name)
+word_stats.py:104:22: W0621: Redefining name 'out_file' from outer scope (line 9) (redefined-outer-name)
+word_stats.py:112:32: W0621: Redefining name 'out_file' from outer scope (line 9) (redefined-outer-name)
+word_stats.py:5:0: W0611: Unused check_output imported from subprocess (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 9.02/10 (previous run: 9.02/10, +0.00)
+
